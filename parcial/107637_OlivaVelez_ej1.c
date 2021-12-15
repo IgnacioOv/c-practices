@@ -25,7 +25,6 @@
 
 void multiplicar_pares(int num)
 {
-
     // Declaro Variables
 
     int resto, digito;

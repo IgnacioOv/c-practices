@@ -1,5 +1,6 @@
-    multiplicar_pares(444);
-    multiplicar_pares(1357);
-    multiplicar_pares(2468);
-    multiplicar_pares(8230);
-}
+
+  // printf("CASO 2 -------------------------\n\n");
+  // ejercicio_3(matriz2, 10, 5);
+
+  // printf("CASO 3 -------------------------\n\n");
+  // ejercicio_3(matriz3, 20, 6);

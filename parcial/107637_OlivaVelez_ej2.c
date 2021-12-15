@@ -13,14 +13,23 @@ Por ejemplo:
 */
 #include <stdio.h>
 #define MAX 1000
-typedef char vec[MAX];
 
-void ejercicio_2(vec c)
+void ejercicio_2(char *c)
 {
-    
+  int i;
+  int aux = 0;
+  for (i = 0; c[i] != '.'; i++)
+  {
+
+    if (c[i] != 'A' && c[i] != 'E' && c[i] != 'I' && c[i] != 'O' && c[i] != 'U' && c[i] != ',' && c[i] != '.' && c[i] != '2')
+    {
+      aux++;
+    }
+  }
+  printf("%d", aux);
 }
 void main()
 {
-    vec caracteres[MAX] = {'H', 'O', 'L', 'A', ',', 'E', 'J', 'E', 'R', 'C', 'I', 'C', 'I', 'O', '2', '\0'};
-    ejercicio_2(caracteres);
+  char caracteres[MAX] = {'H', 'O', 'L', 'A', ',', 'E', 'J', 'E', 'R', 'C', 'I', 'C', 'I', 'O', '2', '.'};
+  ejercicio_2(caracteres);
 }
