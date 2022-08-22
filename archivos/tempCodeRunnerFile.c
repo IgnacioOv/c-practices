@@ -1,2 +1,0 @@
-
-    *fopen("./alumnos.dat", "r+");

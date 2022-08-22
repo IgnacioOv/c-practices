@@ -1,50 +1,50 @@
 /*
-Utilizando las declaraciones dadas debajo, implementar la función ejercicio_3 que reciba una matriz cargada con números enteros, que representan las cantidades de mililitros de lluvia por hora de cada dia del mes de noviembre.
+Utilizando las declaraciones dadas debajo, implementar la función ejercicio_3 que reciba una matriz cargada con números enteros, que representan las cantidades de mililitros de lluvia por hora de cada dia del mes de enero.
 
-La función debe mostrar por pantalla el dia y el acumulado de ese dia, de aquellos dias que esten por debajo del promedio diario mensual.
+La función debe mostrar por pantalla el numero de dia y la cantidad minima de mililitros de lluvia, por cada dia del mes .
 
-Considerar que solo se puede recorrer una vez la matriz. Está permitido utilizar un vector auxiliar.
+Considerar que solo se puede recorrer una vez la matriz.
 
 Por ejemplo:
 
-Hora ->   0   1   2   ... 22  23      Acumulado x dia
-            -----------------------------------------------------
+Hora ->   0   1   2   ... 22  23      Minimo x dia
 
-Dia 1   |   0   7   5   ... 4   3     ->        51
-      2   |   2   6   3   ... 3   2     ->        52
-      3   |   0   1   3   ... 2   3     ->        40
+            ------------------------------------------------------
+
+Dia 1   |   0   7   5   ... 4   3     ->    0
+      2   |   6   6   3   ... 3   2     ->    2
+      3   |   0   1   3   ... 2   3     ->    0
        ... |   ... ... ... ... ... ...
-     30  |   1   2   6   ... 3   5     ->        45
-
-Promedio diario mensual =   44.2
-
-El Resultado a mostrar sería:
-    En el dia 3 han caido 40 ml.
-    ...(y todos los otros días que estén por debajo del promedio)
+     31  |   8   2   6   ... 1   5     ->    1
 
 */
 
 #include <stdio.h>
 #define HORAS 24
-#define DIAS 30
+#define DIAS 31
 
 typedef int matrix_t[DIAS][HORAS];
 
 void ejercicio_3(matrix_t matrix)
 {
-    int i, j;
-    int acumulado;
+
+    int i, j, k;
+    int min = 0;
+
+    printf("Hora -> 0 1 2 3 4 5 6 7 8 9 10  11  12  13  14  15  16  17  18  19  20  21  22  23\n\n");
+
     for (i = 0; i < DIAS; i++)
     {
-        acumulado = 0;
-        printf("Dia %d ", i);
+        printf("Dia %d -> ", i + 1);
         for (j = 0; j < HORAS; j++)
         {
-            printf("Hora %d %d ", j, matrix[i][j]);
-            acumulado = acumulado + matrix[i][j];
+            printf(" %d ", matrix[i][j]);
+            if (matrix[i][j] < min)
+            {
+                min = matrix[i][j];
+            }
         }
-
-        printf("acumulado %d", acumulado);
+        printf("-> Minimo %d", min);
         printf("\n");
     }
 }

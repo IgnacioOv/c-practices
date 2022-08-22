@@ -11,23 +11,27 @@ Por ejemplo:
 
 #include <stdio.h>
 typedef int matrix_t[25][25];
+
 void ejercicio_3(matrix_t matrix, int mf, int mc)
 {
-  int aux[750];
-  int i, j, k, l;
+  int length = mc * mf;
+  int i, j, k, aux[500], aux2[500];
   for (i = 0; i < mf; i++)
   {
     for (j = 0; j < mc; j++)
     {
-
-      printf(" %d ", matrix[i][j]);
-
-      for (k = 0; k < 25; k++)
+      aux[i * mc + j] = matrix[i][j];
+    }
+  }
+  for (int k = 0; k < length; k++)
+  {
+    for (int l = k + 1; l < length; l++)
+    {
+      if (aux[k] == aux[l])
       {
-        aux[k] = matrix[i][j];
+        printf("%d ", aux[k]);
       }
     }
-    printf("\n");
   }
 }
 void main()
@@ -42,6 +46,6 @@ void main()
   printf("CASO 2 -------------------------\n\n");
   ejercicio_3(matriz2, 10, 5);
 
-  printf("CASO 3 -------------------------\n\n");
+  printf("\nCASO 3 -------------------------\n\n");
   ejercicio_3(matriz3, 20, 6);
 }

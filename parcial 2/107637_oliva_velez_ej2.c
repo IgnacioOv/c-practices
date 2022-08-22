@@ -1,4 +1,4 @@
-/* 
+/*
 Implementar la funcion ejercicio_2 que reciba una vector de numeros enteros (maximo 1000) y un máximo logico. La funcion debe devolver la cantidad de números pares que se encuentran en posiciones impares.
 
 Considerar que solo se puede recorrer una vez el vector.
@@ -13,7 +13,7 @@ Por ejemplo:
 #include <stdio.h>
 #define MAX 1000
 
-int ejercicio_2(int vector[], int maximo_logico)
+int ejercicio_2(int vector[MAX], int maximo_logico)
 {
     int i;
     int contador = 0;
@@ -25,7 +25,7 @@ int ejercicio_2(int vector[], int maximo_logico)
         }
     }
 
-    return contador;
+    printf("%d", contador);
 }
 
 int main()
